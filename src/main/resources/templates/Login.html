@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/icon-x" href="../webapp/Images/hospitals-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #3498db, #8e44ad);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .Main-div {
+            width: 400px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #bdc3c7;
+            border-radius: 3px;
+            background-color: #ecf0f1;
+            color: #34495e;
+        }
+
+        .button {
+            text-align: center;
+        }
+
+        button {
+            cursor: pointer;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            padding: 10px 20px;
+            background-color: #3498db;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .signup-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .signup-link a {
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .signup-link a:hover {
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <div class="Main-div">
+        <form action="login" method="post">
+            <h1>LOGIN</h1>
+            <label for="username">USERNAME</label>
+            <input type="text" name="username" id="username" required>
+
+            <label for="password">PASSWORD</label>
+            <input type="password" name="password" id="password" required>
+
+            <div class="button">
+                <button type="submit">LOGIN</button>
+            </div>
+
+            <div class="signup-link">
+                <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

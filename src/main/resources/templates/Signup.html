@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/icon-x" href="../webapp/Images/hospitals-icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <style>
+       body {
+           background: linear-gradient(to right, #3498db, #8e44ad);
+           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+           margin: 0;
+           padding: 0;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           height: 100vh;
+       }
+
+       .Main-div {
+           width: 400px;
+           padding: 40px;
+           background: rgba(255, 255, 255, 0.9);
+           box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+           border-radius: 5px;
+       }
+
+       h1 {
+           text-align: center;
+           color: #2c3e50;
+       }
+
+       label {
+           display: block;
+           margin-bottom: 8px;
+           color: #2c3e50;
+       }
+
+       input {
+           width: 100%;
+           padding: 10px;
+           margin-bottom: 15px;
+           border: 1px solid #bdc3c7;
+           border-radius: 3px;
+           background-color: #ecf0f1;
+           color: #34495e;
+       }
+
+       .button {
+           text-align: center;
+       }
+
+       button {
+           cursor: pointer;
+           color: #fff;
+           border: none;
+           border-radius: 3px;
+           padding: 10px 20px;
+           background-color: #3498db;
+           font-size: 16px;
+           transition: background-color 0.3s ease;
+       }
+
+       button:hover {
+           background-color: #2980b9;
+       }
+
+       span {
+           color: #e74c3c;
+       }
+    </style>
+</head>
+<body>
+    <div class="Main-div">
+        <form action="/signup" method="post" th:object="${customer}">
+            <h1>ENTER YOUR DETAILS</h1>
+            <label for="name">NAME</label>
+            <input type="text" name="name" id="name" required placeholder="Enter your Name" th:field="*{name}">
+            <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="font-size: smaller;"></span>
+
+            <label for="mobile">MOBILE</label>
+            <input type="tel" name="mobile" id="mobile" pattern="[0-9]{10}" required placeholder="Enter Valid Number" th:field="*{mobile}">
+            <span th:if="${#fields.hasErrors('mobile')}" th:errors="*{mobile}"></span>
+
+            <label for="gmail">GMAIL</label>
+            <input type="text" name="gmail" id="gmail" required placeholder="Enter Proper Gmail" th:field="*{gmail}">
+            <span th:if="${#fields.hasErrors('gmail')}" th:errors="*{gmail}"></span>
+
+            <label for="password">PASSWORD</label>
+            <input type="password" name="password" id="password" required placeholder="Create password" th:field="*{password}">
+            <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+
+            <label for="dob">DOB</label>
+            <input type="date" name="dob" id="dob" required placeholder="Cant be null" th:field="*{dob}">
+            <span th:if="${#fields.hasErrors('dob')}" th:errors="*{dob}"></span>
+
+            <label for="gender">GENDER</label>
+            <input type="radio" name="gender" id="male" value="Male" required th:field="*{gender}"><span>Male</span>
+            <input type="radio" name="gender" id="female" value="Female"required th:field="*{gender}"><span>Female</span>
+            <span th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></span>
+
+            <div class="button">
+                <button type="reset">CANCEL</button>
+                <button type="submit">REGISTER</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
