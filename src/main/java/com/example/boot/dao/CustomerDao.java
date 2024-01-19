@@ -22,4 +22,8 @@ public class CustomerDao {
 	public boolean checkMobileDuplicate(long mobile) {
 		return repository.existsByMobile(mobile);
 	}
+
+	public Customer findById(int id) {
+		return repository.findById(id).orElseThrow();
+	}
 }
